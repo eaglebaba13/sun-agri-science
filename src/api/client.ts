@@ -1,7 +1,7 @@
 import axios, { type AxiosError } from "axios";
 
 export const BACKEND_URL: string =
-  (import.meta.env.VITE_BACKEND_URL as string | undefined) || "https://api.yourdomain.com";
+  (import.meta.env["VITE_BACKEND_URL"] as string | undefined) || "https://api.yourdomain.com";
 
 export const TOKEN_KEY = "sas_token";
 export const USER_KEY = "sas_user";

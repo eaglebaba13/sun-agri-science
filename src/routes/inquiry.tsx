@@ -7,7 +7,7 @@ import { inquiriesApi, type InquiryPayload } from "@/api/inquiries";
 import { PRODUCTS } from "@/data/catalog";
 
 export const Route = createFileRoute("/inquiry")({
-  validateSearch: (s: Record<string, unknown>): { product?: string } => ({ product: typeof s.product === "string" ? s.product : undefined }),
+  validateSearch: (s: Record<string, unknown>): { product?: string | undefined } => ({ product: typeof s.product === "string" ? s.product : undefined }),
   head: () => ({
     meta: [
       { title: "Dealer & Bulk Inquiry | Sun Agri Science" },

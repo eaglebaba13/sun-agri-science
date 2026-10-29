@@ -6,7 +6,7 @@ import { productsQuery } from "@/api/products";
 import { CATEGORIES } from "@/data/catalog";
 
 export const Route = createFileRoute("/products/")({
-  validateSearch: (s: Record<string, unknown>): { category?: string } => ({ category: typeof s.category === "string" ? s.category : undefined }),
+  validateSearch: (s: Record<string, unknown>): { category?: string | undefined } => ({ category: typeof s.category === "string" ? s.category : undefined }),
   head: () => ({
     meta: [
       { title: "Product Catalog | Sun Agri Science" },

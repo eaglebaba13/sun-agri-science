@@ -61,7 +61,7 @@ function Home() {
         <h2 className="mt-2 text-3xl font-semibold md:text-4xl">Product categories</h2>
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {CATEGORIES.map((c, i) => {
-            const Icon = ICONS[i];
+            const Icon = ICONS[i] ?? Leaf;
             const count = PRODUCTS.filter((p) => p.category === c.name).length;
             return (
               <Link key={c.name} to="/products" search={{ category: c.name }} className="group rounded-xl border bg-card p-6 transition hover:-translate-y-1 hover:border-primary hover:shadow-lg">
