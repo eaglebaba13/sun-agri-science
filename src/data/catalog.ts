@@ -51,7 +51,7 @@ export const PRODUCTS: Product[] = [
   p({ name: "Gibberellic Acid 40% WSG", category: "Plant Growth Regulators", formulation: "Water Soluble Granules", activeIngredient: "Gibberellic Acid 40% w/w", description: "Plant growth regulator that improves fruit size, cell elongation and uniform flowering.", packaging: ["1 g", "5 g", "10 g"], dosage: "As per crop schedule", crops: ["Grapes", "Paddy", "Vegetables"] }),
   p({ name: "Triacontanol 0.05% GR", category: "Plant Growth Regulators", formulation: "Granules", activeIngredient: "Triacontanol 0.05% min.", description: "Growth promoter granules that support tillering, root growth and higher yield.", packaging: PACK_G, dosage: "4 – 5 kg per acre", crops: ["Paddy", "Wheat", "Vegetables"] }),
   ...["Pyriproxyfen 10% EC|Insecticides", "Thiamethoxam 25% WG|Insecticides", "Azoxystrobin 23% SC|Fungicides", "Tebuconazole 25.9% EC|Fungicides", "Captan 70% + Hexaconazole 5% WP|Fungicides", "Azoxystrobin 18.2% + Difenoconazole 11.4% SC|Fungicides", "Azoxystrobin 11% + Tebuconazole 18.3% SC|Fungicides"].map((s) => {
-    const [name, category] = s.split("|");
+    const [name, category] = s.split("|") as [string, string];
     return p({ name, category: category as Category, formulation: name.split(" ").pop()!, activeIngredient: name, description: "Coming soon to the Sun Agri Science range. Contact us to book early dealer allocation.", packaging: ["To be announced"], dosage: "Label pending", crops: [], upcoming: true });
   }),
 ];
