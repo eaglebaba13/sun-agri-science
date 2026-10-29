@@ -20,7 +20,7 @@ const STATS = [
   ["15,000", "sq. m Sulphur WDG unit"],
   ["₹100+ Cr", "R S Group turnover"],
   ["5+", "Branch offices"],
-  [`${PRODUCTS.length}+`, "Products in the range"],
+  ["35+", "Products in the range"],
 ];
 const TESTIMONIALS = [
   { q: "Their Sulphur 80% WDG mixes well in the tank and has cut powdery mildew in our grape blocks.", n: "Grape grower", l: "Nashik, Maharashtra" },
