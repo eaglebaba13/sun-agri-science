@@ -26,7 +26,7 @@ function Login() {
 
   async function submit(e: FormEvent) {
     e.preventDefault();
-    if (!id || !pw) return toast.error("Enter your email/username and password");
+    if (!id || !pw) { toast.error("Enter your email/username and password"); return; }
     setBusy(true);
     try {
       const r = await authApi.login(id, pw);

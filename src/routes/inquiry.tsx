@@ -7,7 +7,7 @@ import { inquiriesApi, type InquiryPayload } from "@/api/inquiries";
 import { PRODUCTS } from "@/data/catalog";
 
 export const Route = createFileRoute("/inquiry")({
-  validateSearch: (s: Record<string, unknown>): { product?: string | undefined } => ({ product: typeof s.product === "string" ? s.product : undefined }),
+  validateSearch: (s: Record<string, unknown>): { product?: string | undefined } => ({ product: typeof s["product"] === "string" ? s["product"] : undefined }),
   head: () => ({
     meta: [
       { title: "Dealer & Bulk Inquiry | Sun Agri Science" },
@@ -52,7 +52,7 @@ function Inquiry() {
     ev.preventDefault();
     const e = validateInquiry(f);
     setErrors(e);
-    if (Object.keys(e).length) return toast.error("Please fix the highlighted fields");
+    if (Object.keys(e).length) { toast.error("Please fix the highlighted fields"); return; }
     setBusy(true);
     try {
       const r = await inquiriesApi.submit(f);
