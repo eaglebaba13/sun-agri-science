@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, Download, Package, Sprout, Beaker } from "lucide-react";
-import brochure from "@/assets/brochure.pdf.asset.json";
+import brochure from "@/assets/brochure.pdf?url";
 import { PRODUCTS } from "@/data/catalog";
 
 export const Route = createFileRoute("/products/$slug")({
@@ -38,7 +38,7 @@ function Detail() {
       {p.upcoming && <span className="mt-3 inline-block rounded-full bg-harvest px-3 py-1 text-xs font-bold text-harvest-foreground">Upcoming launch</span>}
       <p className="mt-5 max-w-3xl text-lg text-muted-foreground">{p.description}</p>
       <div className="mt-6 flex flex-wrap gap-3">
-        <a href={brochure.url} download="Sun-Agri-Science-Brochure.pdf" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 font-semibold text-primary-foreground"><Download className="h-4 w-4" /> Download brochure</a>
+        <a href={brochure} download="Sun-Agri-Science-Brochure.pdf" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 font-semibold text-primary-foreground"><Download className="h-4 w-4" /> Download brochure</a>
         <Link to="/inquiry" search={{ product: p.name }} className="rounded-md border px-5 py-3 font-semibold hover:border-primary">Ask for bulk pricing</Link>
       </div>
 

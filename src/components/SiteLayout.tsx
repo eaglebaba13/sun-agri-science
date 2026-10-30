@@ -3,11 +3,11 @@ import { useEffect, useState, type ReactNode } from "react";
 import { Menu, X, Phone, Mail, MapPin, Linkedin, Store, Building2 } from "lucide-react";
 import { checkBackendHealth, BACKEND_URL } from "@/api/client";
 import { COMPANY } from "@/data/catalog";
-import logo from "@/assets/sunagriscience_name_logo1.png.asset.json";
-import makeInIndia from "@/assets/make-in-india.png.asset.json";
-import saveWater from "@/assets/save_water_save_life.png.asset.json";
-import swachh from "@/assets/swachh_bharat.png.asset.json";
-import swadeshi from "@/assets/swadeshi_apnao.png.asset.json";
+import logo from "@/assets/sunagriscience_name_logo1.png";
+import makeInIndia from "@/assets/make-in-india.png";
+import saveWater from "@/assets/save_water_save_life.png";
+import swachh from "@/assets/swachh_bharat.png";
+import swadeshi from "@/assets/swadeshi_apnao.png";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -25,10 +25,10 @@ const LINKS = [
 ];
 
 const CAMPAIGNS = [
-  { src: makeInIndia.url, alt: "Make in India" },
-  { src: saveWater.url, alt: "Save Water Save Life" },
-  { src: swachh.url, alt: "Swachh Bharat" },
-  { src: swadeshi.url, alt: "Swadeshi Apnao" },
+  { src: makeInIndia, alt: "Make in India" },
+  { src: saveWater, alt: "Save Water Save Life" },
+  { src: swachh, alt: "Swachh Bharat" },
+  { src: swadeshi, alt: "Swadeshi Apnao" },
 ];
 
 export function BackendStatus() {
@@ -52,7 +52,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
           <Link to="/" className="flex items-center" aria-label="Sun Agri Science home">
-            <img src={logo.url} alt="Sun Agri Science" className="h-10 w-auto md:h-11" />
+            <img src={logo} alt="Sun Agri Science" className="h-10 w-auto md:h-11" />
           </Link>
           <nav className="hidden items-center gap-6 md:flex">
             {NAV.map((n) => (
@@ -77,7 +77,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       <footer className="bg-primary text-primary-foreground">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 md:grid-cols-3">
           <div>
-            <span className="inline-block rounded-md bg-background p-2"><img src={logo.url} alt="Sun Agri Science" className="h-10 w-auto" /></span>
+            <span className="inline-block rounded-md bg-background p-2"><img src={logo} alt="Sun Agri Science" className="h-10 w-auto" /></span>
             <p className="mt-3 text-sm opacity-80">Pesticides · Fertilizers · Seeds. A company of the R S Group, with a turnover of more than ₹100 Crore.</p>
           </div>
           <div className="space-y-2 text-sm opacity-90">
