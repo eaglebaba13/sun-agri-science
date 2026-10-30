@@ -1,8 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState, type ReactNode } from "react";
-import { Menu, X, Sun, Phone, Mail, MapPin } from "lucide-react";
+import { Menu, X, Phone, Mail, MapPin, Linkedin, Store, Building2 } from "lucide-react";
 import { checkBackendHealth, BACKEND_URL } from "@/api/client";
 import { COMPANY } from "@/data/catalog";
+import logo from "@/assets/sunagriscience_name_logo1.png.asset.json";
+import makeInIndia from "@/assets/make-in-india.png.asset.json";
+import saveWater from "@/assets/save_water_save_life.png.asset.json";
+import swachh from "@/assets/swachh_bharat.png.asset.json";
+import swadeshi from "@/assets/swadeshi_apnao.png.asset.json";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -10,6 +15,21 @@ const NAV = [
   { to: "/about", label: "About & Plant" },
   { to: "/inquiry", label: "Dealer Inquiry" },
 ] as const;
+
+const LINKS = [
+  { label: "IndiaMART", icon: Store, url: "https://www.indiamart.com/sun-agri-science/" },
+  { label: "Justdial · Paldi", icon: MapPin, url: "https://www.justdial.com/Jaipur/Sun-Agri-Science-Paldi/0141PX141-X141-231111080046-Q2K8_BZDET?trkid=&term=&ncatid=10009583&area=&search=Showing%20Results%20for%20%22Sun%20Agri%20Science%20Vidhyadhar%20Nagar%22%20in%20Jaipur&mncatname=Sun%20Agri%20Science%20Vidhyadhar%20Nagar&ftterm=Sun%20Agri%20Science%20Vidhyadhar%20Nagar&csell=&oncatid=10009583&abd_btn=&abd_heading=&isFreetxt=1&bd=2&cat_b2b_flag=&searchfrom=lst&thumbnail=" },
+  { label: "Justdial · Vidhyadhar Nagar", icon: MapPin, url: "https://www.justdial.com/Jaipur/search?q=Sun-Agri-Science-Vidhyadhar-Nagar&stype=company_list&filters=[{%22e%22:%22100%22,%22v%22:[%22Distance%22]}]&v=nctol" },
+  { label: "IndiaLei", icon: Building2, url: "https://indialei.in/detailed-information/48304046/9845008D7CBB9610DM05/sun-agri-science/" },
+  { label: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/sun-agri-science-4209772b8/" },
+];
+
+const CAMPAIGNS = [
+  { src: makeInIndia.url, alt: "Make in India" },
+  { src: saveWater.url, alt: "Save Water Save Life" },
+  { src: swachh.url, alt: "Swachh Bharat" },
+  { src: swadeshi.url, alt: "Swadeshi Apnao" },
+];
 
 export function BackendStatus() {
   const [s, setS] = useState<"checking" | "live" | "demo">("checking");
