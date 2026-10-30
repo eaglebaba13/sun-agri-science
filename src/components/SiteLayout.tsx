@@ -81,8 +81,8 @@ export function SiteLayout({ children }: { children: ReactNode }) {
       <footer className="bg-primary text-primary-foreground">
         <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 md:grid-cols-3">
           <div>
-            <p className="font-display text-xl">Sun Agri Science</p>
-            <p className="mt-2 text-sm opacity-80">Pesticides · Fertilizers · Seeds. A company of the R S Group, with a turnover of more than ₹100 Crore.</p>
+            <span className="inline-block rounded-md bg-background p-2"><img src={logo.url} alt="Sun Agri Science" className="h-10 w-auto" /></span>
+            <p className="mt-3 text-sm opacity-80">Pesticides · Fertilizers · Seeds. A company of the R S Group, with a turnover of more than ₹100 Crore.</p>
           </div>
           <div className="space-y-2 text-sm opacity-90">
             <p className="flex gap-2"><MapPin className="h-4 w-4 shrink-0" />{COMPANY.corporate}</p>
@@ -92,10 +92,23 @@ export function SiteLayout({ children }: { children: ReactNode }) {
           <div className="text-sm opacity-90">
             <p className="font-semibold text-harvest">Branch offices</p>
             <p className="mt-1">{COMPANY.branches.join(" · ")}</p>
+            <p className="mt-4 font-semibold text-harvest">Find us online</p>
+            <ul className="mt-2 space-y-1.5">
+              {LINKS.map(({ label, icon: Icon, url }) => (
+                <li key={label}>
+                  <a href={url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-harvest"><Icon className="h-4 w-4" />{label}</a>
+                </li>
+              ))}
+            </ul>
             <div className="mt-4 [&_span]:text-primary-foreground/80"><BackendStatus /></div>
           </div>
         </div>
-        <p className="border-t border-primary-foreground/15 py-4 text-center text-xs opacity-70">© {new Date().getFullYear()} Sun Agri Science. All rights reserved.</p>
+        <div className="bg-background">
+          <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-8 px-4 py-5">
+            {CAMPAIGNS.map((c) => <img key={c.alt} src={c.src} alt={c.alt} className="h-12 w-auto object-contain" loading="lazy" />)}
+          </div>
+        </div>
+        <p className="py-4 text-center text-xs opacity-70">© {new Date().getFullYear()} Sun Agri Science. All rights reserved.</p>
       </footer>
     </div>
   );
