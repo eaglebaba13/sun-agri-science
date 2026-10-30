@@ -51,12 +51,8 @@ export function SiteLayout({ children }: { children: ReactNode }) {
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
-          <Link to="/" className="flex items-center gap-2">
-            <span className="grid h-9 w-9 place-items-center rounded-full bg-primary text-harvest"><Sun className="h-5 w-5" /></span>
-            <span className="leading-tight">
-              <span className="block font-display text-lg font-semibold">Sun Agri Science</span>
-              <span className="block text-[10px] uppercase tracking-widest text-muted-foreground">R S Group · ISO 9001:2015</span>
-            </span>
+          <Link to="/" className="flex items-center" aria-label="Sun Agri Science home">
+            <img src={logo.url} alt="Sun Agri Science" className="h-10 w-auto md:h-11" />
           </Link>
           <nav className="hidden items-center gap-6 md:flex">
             {NAV.map((n) => (
